@@ -4,7 +4,6 @@ import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import { Cards } from "../components/Cards.jsx";
 
 
-
 export const CharactersList = () => {
 
 
@@ -19,9 +18,7 @@ export const CharactersList = () => {
             payload: dataContext
         })
 
-
     }
-
 
     useEffect(() => {
         dataExtract()
