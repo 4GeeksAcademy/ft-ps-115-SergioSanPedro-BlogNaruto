@@ -1,0 +1,8 @@
+export const getCharacters = async () => {
+    const response = await fetch('https://dattebayo-api.onrender.com/characters')
+
+    const data = await response.json();
+
+    return data.characters
+
+    }
