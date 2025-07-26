@@ -1,18 +1,29 @@
-import { Link, useParams } from "react-router-dom"
+import { Link } from "react-router-dom"
+import useGlobalReducer from "../hooks/useGlobalReducer"
 
 export const Cards = ({ character }) => {
 
 
+    const {store, dispatch } = useGlobalReducer();
+
+    const handleOnClick = () => {
+
+        dispatch({
+            type: 'favorites',
+            payload: character 
+        })
+        
+    }
 
     return (
         <>
 
             <div className="card" style={{ width: "20rem" }}>
-                <img src={character.images[0]} className="card-img-top" alt={character.image} />
+                <img src={character.images[0]} className="card-img-top" style={{padding: '0px'}} alt={character.image} />
                 <div className="card-body">
                     <h5 className="card-title">{character.name}</h5>
                     <p className="card-text">
-                        Debut en anime: {character.debut.anime}
+                        Debut en anime: {character.personal.sex}
                     </p>
                     <div className="d-flex justify-content-between">
                         <Link to={`/characters-details/${character.id}`}>
@@ -21,7 +32,7 @@ export const Cards = ({ character }) => {
                             </button>
                         </Link>
                         <label className="ui-bookmark">
-                            <input type="checkbox" />
+                            <input onClick={handleOnClick} type="checkbox" />
                             <div className="bookmark">
                                 <svg
                                     viewBox="0 0 16 16"

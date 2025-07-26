@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
+import useGlobalReducer from "../hooks/useGlobalReducer";
 
 
 export const Navbar = () => {
+
+
+	const { store, dispatch } = useGlobalReducer();
+
+	console.log(store.favorites);
 
 
 	return (
@@ -14,9 +20,32 @@ export const Navbar = () => {
 				</li>
 
 				<li className="nav-item">
-					<a className="nav-link" href="#">
-						Link
-					</a>
+					<div className="dropdown">
+						<a
+							className="btn btn-secondary dropdown-toggle"
+							href="#"
+							role="button"
+							data-bs-toggle="dropdown"
+							aria-expanded="false"
+						>
+							Dropdown link
+						</a>
+						<ul className="dropdown-menu">
+							{
+								store.favorites.length > 0
+									?
+									store.favorites.map(fav => (
+										<Link key={fav.id} to={`/characters-details/${fav.id}`}>
+											<li>{fav.name}</li>
+										</Link>
+									))
+									:
+									<li>Vacio</li>
+							}
+
+						</ul>
+					</div>
+
 				</li>
 				<li className="nav-item">
 					<a className="nav-link" href="#">
@@ -30,6 +59,9 @@ export const Navbar = () => {
 				</li>
 			</ul>
 
+
+
+			{/* menu lateral */}
 			<div
 				className="offcanvas offcanvas-start"
 				tabIndex={-1}
@@ -56,8 +88,13 @@ export const Navbar = () => {
 								</Link>
 							</li>
 							<li>
+								<Link to={'/akatsuki-list'}>
+									<a>Personajes Akatsuki</a>
+								</Link>
+							</li>
+							<li>
 								<Link to="/">
-									<span className="navbar-brand mb-0 h1">Home</span>
+									<a>Home</a>
 								</Link>
 							</li>
 						</ul>

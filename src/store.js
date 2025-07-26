@@ -2,7 +2,9 @@ export const initialStore = () => {
   return {
     characters: [],
     tailedBeast: {},
-    detailCharacter: null
+    detailCharacter: null,
+    akatsuki: [],
+    favorites: []
   }
 }
 
@@ -23,6 +25,14 @@ export default function storeReducer(store, action) {
     case 'detailCharacter':
       return{
         ...store, detailCharacter: action.payload
+      }
+    case 'akatsuki':
+      return {
+        ...store, akatsuki: action.payload
+      }
+    case 'favorites':
+      return {
+        ...store, favorites: [...store.favorites, action.payload]
       }
 
     default:

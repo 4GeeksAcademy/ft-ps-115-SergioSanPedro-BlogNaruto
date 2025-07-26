@@ -16,3 +16,12 @@ export const getCharactersById = async (id) => {
     return data
     
 }
+
+export const getAkatsukiList = async () => {
+    const response = await fetch('https://dattebayo-api.onrender.com/akatsuki');
+
+    const data = await response.json();
+
+    return data.akatsuki
+    
+}
