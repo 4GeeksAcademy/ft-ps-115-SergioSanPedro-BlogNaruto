@@ -13,6 +13,8 @@ export const Cards = ({ character }) => {
             payload: character 
         })
         
+        store.favsOnOff = true
+        
     }
 
     return (

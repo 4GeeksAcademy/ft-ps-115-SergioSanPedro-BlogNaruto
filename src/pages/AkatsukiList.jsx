@@ -12,14 +12,18 @@ export const AkatsukiList = () => {
 
 
         <>
+            <div className="container my-4 bg-secondary" style={{ overflowY: 'auto' }}>
+                <h1 className="text-center mt-2 p-3">Lista de personajes</h1>
 
+                <div className="row d-flex justify-content-center gap-3">
 
-        {
-            store.akatsuki.map((aka) => (
-                <Cards key={aka.id} character={aka}/>
-            ))
-        }
-
+                    {
+                        store.akatsuki.map((aka) => (
+                            <Cards key={aka.id} character={aka} />
+                        ))
+                    }
+                </div>
+            </div>
 
         </>
     )

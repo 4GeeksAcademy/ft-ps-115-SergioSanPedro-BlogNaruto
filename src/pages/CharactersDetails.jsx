@@ -35,7 +35,7 @@ export const CharacterDetails = () => {
 
     return (
         <>
-            <div className="card w-50 mb-3 d-flex space-between">
+            <div className="card w-50 mb-3 mx-auto mt-5 d-flex space-between">
                 <img src={store.detailCharacter.images[0]} className="card-img-top w-25 h-25" alt="..." />
                 <div className="card-body">
                     <h5 className="card-title">{store.detailCharacter.name}</h5>
