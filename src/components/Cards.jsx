@@ -8,24 +8,31 @@ export const Cards = ({ character }) => {
 
     const handleOnClick = () => {
 
-        dispatch({
+        const inFavorites = store.favorites.some(fav => fav.id === character.id);
+
+        if (inFavorites) {
+            dispatch({
+                type: 'removeFavs',
+                payload: character.id
+            })
+        } else {
+            dispatch({
             type: 'favorites',
             payload: character 
         })
-        
-        store.favsOnOff = true
-        
+        }
+
     }
 
     return (
         <>
 
-            <div className="card" style={{ width: "20rem" }}>
+            <div className="card" style={{ width: "18rem" }}>
                 <img src={character.images[0]} className="card-img-top" style={{padding: '0px'}} alt={character.image} />
                 <div className="card-body">
                     <h5 className="card-title">{character.name}</h5>
                     <p className="card-text">
-                        Debut en anime: {character.personal.sex}
+                        Debut en anime: {character.debut.anime}
                     </p>
                     <div className="d-flex justify-content-between">
                         <Link to={`/characters-details/${character.id}`}>

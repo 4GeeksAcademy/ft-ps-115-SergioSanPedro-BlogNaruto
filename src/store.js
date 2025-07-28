@@ -5,42 +5,45 @@ export const initialStore = () => {
     detailCharacter: null,
     akatsuki: [],
     favorites: [],
-    favsOnOff: false
-  }
-}
+  };
+};
 
 export default function storeReducer(store, action) {
   switch (action.type) {
-
-    case 'addCharacters':
+    case "addCharacters":
       return {
         ...store,
-        characters: action.payload
+        characters: action.payload,
       };
 
-    case 'addTailedBeast':
+    case "addTailedBeast":
       return {
-        ...store, tailedBeast: action.payload
+        ...store,
+        tailedBeast: action.payload,
       };
 
-    case 'detailCharacter':
-      return{
-        ...store, detailCharacter: action.payload
-      }
-    case 'akatsuki':
+    case "detailCharacter":
       return {
-        ...store, akatsuki: action.payload
-      }
-    case 'favorites':
+        ...store,
+        detailCharacter: action.payload,
+      };
+    case "akatsuki":
       return {
-        ...store, favorites: [...store.favorites, action.payload]
-      }
-    case 'favsOnOff':
+        ...store,
+        akatsuki: action.payload,
+      };
+    case "favorites":
       return {
-        ...store, favsOnOff: action.payload
-      }
+        ...store,
+        favorites: [...store.favorites, action.payload],
+      };
+    case "removeFavs":
+      return {
+        ...store,
+        favorites: store.favorites.filter((fav) => fav.id !== action.payload),
+      };
 
     default:
-      throw Error('Unknown action.');
+      throw Error("Unknown action.");
   }
 }

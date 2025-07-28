@@ -9,7 +9,7 @@ export const CharactersList = () => {
 
     return (
         <>
-            <div className="container my-4 bg-secondary" style={{ overflowY: 'auto' }}>
+            <div className="container my-4" style={{ overflowY: 'auto' }}>
                 <h1 className="text-center mt-2 p-3">Lista de personajes</h1>
 
                 <div className="row d-flex justify-content-center gap-3">
