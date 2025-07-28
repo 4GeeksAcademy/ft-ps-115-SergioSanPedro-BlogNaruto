@@ -11,6 +11,7 @@ import { Single } from "./pages/Single";
 import { CharacterDetails } from "./pages/CharactersDetails";
 import { CharactersList } from "./pages/CharactersList";
 import { AkatsukiList } from "./pages/AkatsukiList";
+import { TailedBeastsList } from "./pages/TailedBeastsList";
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
@@ -29,6 +30,7 @@ export const router = createBrowserRouter(
         <Route path='/characters-details/:id' element={ <CharacterDetails/> }/>
         <Route path='/characters-list' element={ <CharactersList/> }/>
         <Route path="/akatsuki-list" element={ <AkatsukiList/> }/>
+        <Route path="/tailed-beasts" element={ <TailedBeastsList/> }/>
       </Route>
     )
 );

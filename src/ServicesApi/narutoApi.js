@@ -25,3 +25,12 @@ export const getAkatsukiList = async () => {
     return data.akatsuki
     
 }
+
+export const getTailedBeasts = async () => {
+    const response = await fetch('https://dattebayo-api.onrender.com/tailed-beasts');
+
+    const data = await response.json();
+
+    return data['tailed-beasts']
+    
+}

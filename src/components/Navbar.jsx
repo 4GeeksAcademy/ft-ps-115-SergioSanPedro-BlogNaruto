@@ -5,15 +5,11 @@ export const Navbar = () => {
 
   const { store, dispatch } = useGlobalReducer();
 
-  const handleOnClick = () => {
-    
-  }
-
-  console.log(store.favorites);
+  
 
   return (
     <>
-      <ul className="nav justify-content-center bg-dark fs-4">
+      <ul className="nav justify-content-center bg-dark fixed-top fs-4">
         <li className="nav-item">
           <button
             className="nav-link text-white"
@@ -99,6 +95,11 @@ export const Navbar = () => {
               <li>
                 <Link to={"/akatsuki-list"}>
                   <a>Personajes Akatsuki</a>
+                </Link>
+              </li>
+              <li>
+                <Link to={"/tailed-beasts"}>
+                  <a>Lista de Bestias</a>
                 </Link>
               </li>
               <li>

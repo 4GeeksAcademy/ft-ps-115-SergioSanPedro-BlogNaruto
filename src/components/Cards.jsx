@@ -17,8 +17,8 @@ export const Cards = ({ character }) => {
             })
         } else {
             dispatch({
-            type: 'favorites',
-            payload: character 
+                type: 'favorites',
+                payload: character 
         })
         }
 
@@ -32,7 +32,7 @@ export const Cards = ({ character }) => {
                 <div className="card-body">
                     <h5 className="card-title">{character.name}</h5>
                     <p className="card-text">
-                        Debut en anime: {character.debut.anime}
+                        Debut en anime: {character.personal.sex}
                     </p>
                     <div className="d-flex justify-content-between">
                         <Link to={`/characters-details/${character.id}`}>

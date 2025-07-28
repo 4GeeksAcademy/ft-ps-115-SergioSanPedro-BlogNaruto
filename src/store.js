@@ -1,7 +1,7 @@
 export const initialStore = () => {
   return {
     characters: [],
-    tailedBeast: {},
+    tailedBeasts: [],
     detailCharacter: null,
     akatsuki: [],
     favorites: [],
@@ -19,7 +19,7 @@ export default function storeReducer(store, action) {
     case "addTailedBeast":
       return {
         ...store,
-        tailedBeast: action.payload,
+        tailedBeasts: action.payload,
       };
 
     case "detailCharacter":

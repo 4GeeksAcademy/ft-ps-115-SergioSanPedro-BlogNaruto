@@ -3,7 +3,7 @@ import ScrollToTop from "../components/ScrollToTop"
 import { Navbar } from "../components/Navbar"
 import { Footer } from "../components/Footer"
 import useGlobalReducer from "../hooks/useGlobalReducer"
-import { getAkatsukiList, getCharacters } from "../ServicesApi/narutoApi"
+import { getAkatsukiList, getCharacters, getTailedBeasts } from "../ServicesApi/narutoApi"
 import { useEffect } from "react"
 import { AkatsukiList } from "./AkatsukiList"
 
@@ -13,7 +13,7 @@ export const Layout = () => {
 
     const { store, dispatch } = useGlobalReducer();
 
-    const dataExtract = async () => {
+    const charactersData = async () => {
 
         const dataContext = await getCharacters()
 
@@ -34,10 +34,22 @@ export const Layout = () => {
          
     }
 
+    const tailedBeastsData = async () => {
+        const data = await getTailedBeasts();
+
+        dispatch({
+            type: 'addTailedBeast',
+            payload: data
+        })
+        
+        
+    }
+
 
     useEffect(() => {
-        dataExtract();
+        charactersData();
         akatsukiData();
+        tailedBeastsData();
 
     }, []);
 
