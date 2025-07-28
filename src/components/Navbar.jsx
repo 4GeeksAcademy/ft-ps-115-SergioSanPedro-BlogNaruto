@@ -29,7 +29,7 @@ export const Navbar = () => {
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              Lista Favoritos
+              Lista Favoritos {store.favorites.length}
             </a>
             <ul className="dropdown-menu">
               {store.favorites.length > 0 ? (
@@ -44,7 +44,10 @@ export const Navbar = () => {
                     >
                       {fav.name}
                     </Link>
-                    <button className="btn p-1">X</button>
+                    <button onClick={()=> dispatch({
+                      type: 'removeFavs',
+                      payload: fav.id
+                    })} className="btn p-1">X</button>
                   </li>
                 ))
               ) : (

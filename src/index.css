@@ -7,13 +7,57 @@ body {
 
 }
 
+.cards {
+  width: 340px;
+  height: 250px;
+  perspective: 1000px;
+  
+}
 
+.cards-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.999s;
+}
+
+.cards:hover .cards-inner {
+  transform: rotateY(180deg);
+}
+
+.cards-front,
+.cards-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.cards-front {
+  display: flex;
+  align-items: center;
+  border: 1px solid;
+  border-radius: 10px;
+  justify-content: center;
+  transform: rotateY(0deg);
+}
+
+.cards-back {
+  background-color: #F08A5D;
+  color: #060101;
+  align-items: center;
+  border: 10px solid #F08A5D;
+  border-radius: 10px;
+  font-size: 15px;
+  transform: rotateY(180deg);
+}
 
 .ui-bookmark {
     --icon-size: 24px;
     --icon-secondary-color: rgb(77, 77, 77);
     --icon-hover-color: rgb(97, 97, 97);
-    --icon-primary-color: rgb(252, 54, 54);
+    --icon-primary-color: rgb(243, 83, 9);
     --icon-circle-border: 1px solid var(--icon-primary-color);
     --icon-circle-size: 35px;
     --icon-anmt-duration: 0.3s;
