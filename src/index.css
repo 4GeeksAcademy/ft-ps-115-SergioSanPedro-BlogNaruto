@@ -1,11 +1,4 @@
-body {
-    background-image: url('https://fwmedia.fandomwire.com/wp-content/uploads/2024/11/08074303/naruto-konoha.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
 
-}
 
 .cards {
   width: 340px;
@@ -44,10 +37,10 @@ body {
 }
 
 .cards-back {
-  background-color: #F08A5D;
+  background-color: #efa803;
   color: #060101;
   align-items: center;
-  border: 10px solid #F08A5D;
+  border: 10px solid #efa803;
   border-radius: 10px;
   font-size: 15px;
   transform: rotateY(180deg);
