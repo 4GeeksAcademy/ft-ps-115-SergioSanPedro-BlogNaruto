@@ -13,9 +13,24 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* CONTENEDOR PRINCIPAL */
+/* FONDO DE TODA LA PÁGINA */
+.homeContainer {
+  width: 100vw;
+  min-height: 100vh;
+  background-image: url("https://cdn.wallpapersafari.com/20/72/UGFAgv.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+}
+
+/* CONTENEDOR PRINCIPAL (cuadro) */
 .container {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.85); /* Solo color oscuro transparente */
   border: 4px solid #ff6600;
   border-radius: 20px;
   padding: 60px 40px;
@@ -58,7 +73,7 @@ body {
   margin-right: auto;
 }
 
-/* BOTÓN SIMPLE PERO ÉPICO */
+/* BOTÓN */
 .button {
   background: linear-gradient(45deg, #ff6600, #ff3300);
   color: white;
