@@ -9,9 +9,7 @@ export const CharactersList = () => {
 
     return (
         <>
-            <div className="container my-4">
-                <h1 className="text-center mt-5 p-3">Lista de personajes</h1>
-
+            <div className="container-fluid" style={{marginTop: '8vw'}}>
                 <div className="row d-flex justify-content-center gap-4">
                     {store.characters.map((character) => (
                         <Cards key={character.id} character={character} />

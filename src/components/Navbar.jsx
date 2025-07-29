@@ -24,25 +24,24 @@ export const Navbar = () => {
 
   <li className="nav-item">
     <div className="dropdown">
-      <a
-        className="btn dropdown-toggle text-white"
-        role="button"
+      <button
+        className="btn dropdown-toggle text-white rounded"
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
         Lista Favoritos 
         <span className="transparentFavCounter"> {store.favorites.length}</span>
-      </a>
+      </button>
       <ul className="dropdown-menu">
         {store.favorites.length > 0 ? (
           store.favorites.map((fav) => (
             <li
               key={fav.id}
-              className="d-flex justify-content-between px-1 py-1"
+              className="d-flex justify-content-between fw-bold py-1"
             >
               <Link
                 to={`/characters-details/${fav.id}`}
-                className="text-decoration-none"
+                className="text-decoration-none text-white ms-1"
               >
                 {fav.name}
               </Link>
@@ -58,7 +57,7 @@ export const Navbar = () => {
             </li>
           ))
         ) : (
-          <li>Vacío</li>
+          <li className="ms-2">Vacío</li>
         )}
       </ul>
     </div>

@@ -1,57 +1,84 @@
-import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom"
+import { useEffect } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { getCharactersById } from "../ServicesApi/narutoApi";
 import useGlobalReducer from "../hooks/useGlobalReducer";
-
+import styles from "../pages/styles/components/CharactersList.module.css";
 
 export const CharacterDetails = () => {
+  const { store, dispatch } = useGlobalReducer();
+  const { id } = useParams();
+  const navigate =  useNavigate()
 
+  const dataContent = async () => {
+    const data = await getCharactersById(id);
+    dispatch({
+      type: "detailCharacter",
+      payload: data,
+    });
+  };
 
-    const {store, dispatch} = useGlobalReducer()
-    const { id } = useParams();
-    
+  const handleGoBack = () => {
+    navigate(-1)
+  }
 
-    const dataContent = async () => {
-        const data = await getCharactersById(id)
-        dispatch({
-            type: 'detailCharacter',
-            payload: data
-        })
-    }
-    
-    useEffect(() => {
-        dataContent()
-    },[id])
+  useEffect(() => {
+    dataContent();
+  }, [id]);
 
+  if (!store.detailCharacter) {
+    return <p>Cargando</p>;
+  }
 
-    
-    
-    if (!store.detailCharacter) {
-        return <p>Cargando</p>
-    } 
-    
-    console.log(store.detailCharacter);
-    
+  console.log(store.detailCharacter);
 
-    return (
-        <>
-            <div className="card w-50 mb-3 mx-auto mt-5 d-flex space-between">
-                <img src={store.detailCharacter.images[0]} className="card-img-top w-25 h-25" alt="..." />
-                <div className="card-body">
-                    <h5 className="card-title">{store.detailCharacter.name}</h5>
-                    <p className="card-text">
-                        {store.detailCharacter.personal.birthdate}
-                    </p>
-                    <p className="card-text">{store.detailCharacter.clan}</p>
-                    <p className="card-text">
-                        
-                    </p>
+  return (
+    <>
+      <div className={styles.narutoCard}>
+        <div className={styles.cardImage}>
+          <img
+            src={store.detailCharacter.images[0]}
+            alt={store.detailCharacter.name}
+          />
+        </div>
 
-                    <Link to={'/characters-list'}>
-                    <button className="btn btn-success btn-lg w-25">Volver</button>
-                    </Link>
-                </div>
+        <div className={styles.cardContent}>
+          <div className={styles.cardDecorative}>忍</div>
+
+          <div>
+            <h2 className={styles.characterName}>
+              {store.detailCharacter.name}
+            </h2>
+
+            <p className={styles.characterRank}>Clan: {!store.detailCharacter.clan ? 'S/N' : store.detailCharacter.clan}</p>
+
+            <p className={styles.characterDescription}>descripcion</p>
+          </div>
+
+          <div className={styles.characterStats}>
+            <div className={styles.statItem}>
+              <span className={styles.statLabel}>Sexo:</span>
+              <span className={styles.statValue}>{store.detailCharacter.personal.sex}</span>
             </div>
-        </>
-    )
-}
+
+            <div className={styles.statItem}>
+              <span className={styles.statLabel}>Rango:</span>
+              <span className={styles.statValue}>{}</span>
+            </div>
+
+            <div className={styles.statItem}>
+              <span className={styles.statLabel}>Jutsu:</span>
+              <span className={styles.statValue}>
+                {!store.detailCharacter.jutsu
+                  ? "No tiene jutsus"
+                  : store.detailCharacter.jutsu[0]}
+              </span>
+            </div>
+          </div>
+            <button onClick={handleGoBack} className={`w-50 ${styles.actionButton}`}>
+              Volver
+            </button>
+        </div>
+      </div>
+    </>
+  );
+};

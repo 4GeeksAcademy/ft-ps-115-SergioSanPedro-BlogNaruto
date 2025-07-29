@@ -4,7 +4,6 @@ import useGlobalReducer from "../hooks/useGlobalReducer";
 export const Cards = ({ character }) => {
   const { store, dispatch } = useGlobalReducer();
 
-
   const isChecked = store.favorites.some((fav) => fav.id === character.id);
 
   const handleOnClick = () => {
@@ -23,16 +22,15 @@ export const Cards = ({ character }) => {
     }
   };
 
-  
   if (store.akatsuki.length === 0) {
-    return <p>Cargando...</p>
+    return <p>Cargando...</p>;
   }
 
   return (
     <>
-      <div class="cards">
-        <div class="cards-inner">
-          <div class="cards-front">
+      <div className="cards">
+        <div className="cards-inner">
+          <div className="cards-front">
             <img
               src={character.images[0]}
               className="cards-img"
@@ -45,20 +43,23 @@ export const Cards = ({ character }) => {
               alt={character.image}
             />
           </div>
-          <div class="cards-back">
-            <h5 className="fw-bold">{character.name}</h5>
-            <p className="">
-              <strong>Sexo:</strong> {character.personal.sex}
-            </p>
-            <p>
-                <strong>Jutsu:</strong> {!character.jutsu ? 'No tiene jutsus' : character.jutsu[0] }
-            </p>
-            <div className="d-flex justify-content-between">
+          <div className="cards-back d-flex flex-column h-100">
+            <div className="flex-grow-1">
+              <h3 className="fw-bold text-center mt-3"><strong>Ninja:</strong></h3>
+              <h3 className="fw-bold text-center mt-5"><strong>{character.name}</strong></h3>
+            </div>
+            <div className="mt-auto d-flex justify-content-between align-items-center mb-1">
               <Link to={`/characters-details/${character.id}`}>
-                <button className="btn btn-primary">Ver detalles</button>
+                <button className="btn btn-primary rounded-pill">
+                  Ver detalles
+                </button>
               </Link>
-              <label className="ui-bookmark ">
-                <input checked={isChecked} onClick={handleOnClick} type="checkbox" />
+              <label className="ui-bookmark">
+                <input
+                  checked={isChecked}
+                  onChange={handleOnClick}
+                  type="checkbox"
+                />
                 <div className="bookmark">
                   <svg
                     viewBox="0 0 16 16"
