@@ -4,8 +4,7 @@ import { Cards } from "../components/Cards.jsx";
 
 export const CharactersList = () => {
 
-
-    const { store, dispatch } = useGlobalReducer();
+    const { store } = useGlobalReducer();
 
     return (
         <>

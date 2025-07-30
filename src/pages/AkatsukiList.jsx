@@ -2,7 +2,7 @@ import useGlobalReducer from "../hooks/useGlobalReducer";
 import { Cards } from "../components/Cards";
 
 export const AkatsukiList = () => {
-  const { store, dispatch } = useGlobalReducer();
+  const { store } = useGlobalReducer();
 
   return (
     <>

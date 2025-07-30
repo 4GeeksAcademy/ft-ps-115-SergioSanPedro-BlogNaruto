@@ -43,7 +43,7 @@ export const Cards = ({ character }) => {
               alt={character.image}
             />
           </div>
-          <div className="cards-back d-flex flex-column h-100">
+          <div className="cards-back d-flex flex-column h-100" style={{color: 'black'}}>
             <div className="flex-grow-1">
               <h3 className="fw-bold text-center mt-3"><strong>Ninja:</strong></h3>
               <h3 className="fw-bold text-center mt-5"><strong>{character.name}</strong></h3>

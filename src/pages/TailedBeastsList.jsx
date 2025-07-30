@@ -8,7 +8,7 @@ export const TailedBeastsList = () => {
    return (
            <>
                <div className="container-fluid">
-                   <div className="row d-flex justify-content-center gap-4">
+                   <div className="row d-flex mb-5 justify-content-center gap-4">
                        {store.tailedBeasts.map((beasts) => (
                            <Cards key={beasts.id} character={beasts} />
                        ))}

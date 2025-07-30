@@ -5,7 +5,8 @@ import { Footer } from "../components/Footer"
 import useGlobalReducer from "../hooks/useGlobalReducer"
 import { getAkatsukiList, getCharacters, getTailedBeasts } from "../ServicesApi/narutoApi"
 import { useEffect } from "react"
-import { AkatsukiList } from "./AkatsukiList"
+import { SideBar } from "../components/SideBar"
+
 
 // Base component that maintains the navbar and footer throughout the page and the scroll to top functionality.
 export const Layout = () => {
@@ -58,6 +59,7 @@ export const Layout = () => {
 
     return (
         <ScrollToTop>
+            <SideBar/>
             <Navbar />
             <Outlet />
             <Footer />

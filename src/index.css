@@ -40,9 +40,9 @@ html::-webkit-scrollbar {
 
 .transparentNarutoNavbar .nav-link,
 .transparentNarutoNavbar .btn {
-  background: rgb(242, 151, 15, 0.5) !important;
-  background-color: rgb(242, 139, 13, 0.5) !important;
-  border: 1px solid rgba(255, 102, 0, 0.5) !important;
+  background: rgb(242, 151, 15, 0.7) !important;
+  background-color: rgb(242, 139, 13, 0.7) !important;
+  border: 1px solid rgba(255, 102, 0, 0.7) !important;
   color: white !important;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 1) !important;
 }
@@ -95,9 +95,9 @@ html::-webkit-scrollbar {
 }
 
 .cards-back {
-  background-color: #efa803;
-  color: #060101;
-  border: 10px solid #efa803;
+  background-color: rgb(242, 139, 13, 0.9);
+  color: #060101 !important;
+  padding: 15px;
   border-radius: 10px;
   font-size: 15px;
   transform: rotateY(180deg);
@@ -107,7 +107,7 @@ html::-webkit-scrollbar {
   --icon-size: 24px;
   --icon-secondary-color: rgb(77, 77, 77);
   --icon-hover-color: rgb(97, 97, 97);
-  --icon-primary-color: rgb(243, 83, 9);
+  --icon-primary-color: rgb(255, 8, 8);
   --icon-circle-border: 1px solid var(--icon-primary-color);
   --icon-circle-size: 35px;
   --icon-anmt-duration: 0.3s;
@@ -178,8 +178,6 @@ html::-webkit-scrollbar {
   border: var(--icon-circle-border);
   opacity: 0;
 }
-
-/* actions */
 
 .ui-bookmark:hover .bookmark {
   fill: var(--icon-hover-color);

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getCharactersById } from "../ServicesApi/narutoApi";
 import useGlobalReducer from "../hooks/useGlobalReducer";
 import styles from "../pages/styles/components/CharactersList.module.css";
@@ -29,7 +29,7 @@ export const CharacterDetails = () => {
     return <p>Cargando</p>;
   }
 
-  console.log(store.detailCharacter.personal.affiliation);
+  console.log(store.detailCharacter);
 
   return (
     <>
@@ -43,7 +43,6 @@ export const CharacterDetails = () => {
           </div>
 
           <div className={styles.cardContent}>
-            <div className={styles.cardDecorative}>忍</div>
 
             <div>
               <h2 className={styles.characterName}>
@@ -51,16 +50,20 @@ export const CharacterDetails = () => {
               </h2>
 
               <p className={styles.characterRank}>
-                Clan:{" "}
+                Clan: {" "}
                 {store.detailCharacter.personal?.clan ||
                   store.detailCharacter.personal?.affiliation[1] ||
                   "S/N"}
               </p>
-
-              <p className={styles.characterDescription}>descripcion</p>
             </div>
 
             <div className={styles.characterStats}>
+              <div className={styles.statItem}>
+                <span className={styles.statLabel}>Cumpleaños:</span>
+                <span className={styles.statValue}>
+                  {store.detailCharacter.personal.birthdate}
+                </span>
+              </div>
               <div className={styles.statItem}>
                 <span className={styles.statLabel}>Sexo:</span>
                 <span className={styles.statValue}>
