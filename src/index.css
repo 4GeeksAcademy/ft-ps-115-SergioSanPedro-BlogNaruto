@@ -1,15 +1,22 @@
-/* ELIMINAR BARRAS DE SCROLL */
-html,
+@import url('https://fonts.cdnfonts.com/css/ninja-naruto');
+
 body {
-  overflow-x: hidden;
+ font-family: 'Ninja Naruto', sans-serif !important;
+ letter-spacing: 2px !important;
 }
+
 
 html::-webkit-scrollbar {
   width: 0px;
   background: transparent;
 }
 
-/* NAVBAR SÚPER TRANSPARENTE - FORZADO */
+.card-list{
+  padding-top: 10rem;
+  padding-bottom: 8rem;
+}
+
+/* NAVBAR */
 .transparentNarutoNavbar {
   background: rgba(0, 0, 0, 0.5) !important;
   background-color: rgba(0, 0, 0, 0.5) !important;
@@ -23,6 +30,7 @@ html::-webkit-scrollbar {
   top: 0 !important;
   width: 100% !important;
   z-index: 1000 !important;
+  letter-spacing: 3px !important;
 }
 
 .transparentNarutoNavbar:hover {

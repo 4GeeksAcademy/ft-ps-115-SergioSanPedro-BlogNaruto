@@ -6,8 +6,8 @@ export const AkatsukiList = () => {
 
   return (
     <>
-      <section className="akatsukiImg" style={{marginTop: '8vw'}}>
-        <div className="container-fluid my-4">
+      <section className="">
+        <div className="container-fluid card-list">
           <div className="row d-flex justify-content-center gap-4">
             {store.akatsuki.map((aka) => (
               <Cards key={aka.id} character={aka} />
