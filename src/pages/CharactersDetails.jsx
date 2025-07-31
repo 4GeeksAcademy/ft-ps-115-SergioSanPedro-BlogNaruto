@@ -61,7 +61,7 @@ export const CharacterDetails = () => {
               <div className={styles.statItem}>
                 <span className={styles.statLabel}>Cumpleaños:</span>
                 <span className={styles.statValue}>
-                  {store.detailCharacter.personal.birthdate}
+                  {!store.detailCharacter.personal.birthdate ? 'S/N' : store.detailCharacter.personal.birthdate}
                 </span>
               </div>
               <div className={styles.statItem}>
