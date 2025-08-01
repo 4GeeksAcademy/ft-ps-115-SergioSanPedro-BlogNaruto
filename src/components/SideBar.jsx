@@ -13,7 +13,7 @@ export const SideBar = () => {
         {/* HEADER */}
         <div className={`offcanvas-header ${styles.sidebarHeader}`}>
           <div
-            className={`offcanvas-title ${styles.sidebarTitle}`}
+            className='offcanvas-title'
             id="offcanvasExampleLabel"
           >
             <img className="w-100 ms-1" src="src/assets/img/logoNaruto.png" alt="naruto" />

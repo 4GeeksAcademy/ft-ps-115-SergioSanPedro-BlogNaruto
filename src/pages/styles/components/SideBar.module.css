@@ -17,37 +17,14 @@
 
 /* Línea animada en el header */
 .sidebarHeader::after {
-  content: '';
   position: absolute;
   bottom: 0;
   left: 20%;
   right: 20%;
   height: 2px;
   background: linear-gradient(90deg, transparent, #ff6600, #ff3300, #ff6600, transparent);
-  animation: headerGlow 3s ease-in-out infinite alternate;
 }
 
-/* TÍTULO DEL SIDEBAR */
-.sidebarTitle {
-  color: #ffffff !important;
-  font-size: 1.8rem !important;
-  font-weight: 900 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 3px !important;
-  text-shadow: 
-    2px 2px 0 #ff6600,
-    4px 4px 0 #ff3300,
-    6px 6px 15px rgba(0, 0, 0, 0.8) !important;
-  margin: 0 !important;
-  animation: titlePulse 3s ease-in-out infinite alternate;
-}
-
-/* SÍMBOLO NINJA EN EL TÍTULO */
-.ninjaSymbol {
-  color: #ff6600;
-  margin-right: 10px;
-  animation: symbolFloat 4s ease-in-out infinite;
-}
 
 /* BOTÓN CERRAR */
 .closeButton {
@@ -80,19 +57,6 @@
   min-height: calc(100vh - 100px);
 }
 
-/* Símbolos ninja de fondo */
-.sidebarBody::before {
-  content: '忍火影術';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-45deg);
-  font-size: 6rem;
-  color: rgba(255, 102, 0, 0.05);
-  z-index: 0;
-  pointer-events: none;
-  letter-spacing: 15px;
-}
 
 /* LISTA DEL MENÚ */
 .menuList {
@@ -113,7 +77,7 @@
 .menuLink {
   display: block !important;
   padding: 18px 25px !important;
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: white;
   text-decoration: none !important;
   border-radius: 25px !important;
   border: 1px solid rgba(255, 102, 0, 0.3) !important;
@@ -121,7 +85,6 @@
   transition: all 0.3s ease !important;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9) !important;
   font-weight: 600 !important;
-  text-transform: uppercase !important;
   letter-spacing: 1px !important;
   position: relative;
   overflow: hidden;
@@ -129,7 +92,6 @@
 
 /* Efecto de brillo en los enlaces */
 .menuLink::before {
-  content: '';
   position: absolute;
   top: 0;
   left: -100%;
@@ -156,10 +118,6 @@
   left: 100%;
 }
 
-/* EFECTO ACTIVO */
-.menuLink:active {
-  transform: translateX(3px) !important;
-}
 
 /* EMOJIS EN LOS ENLACES */
 .menuEmoji {
@@ -167,41 +125,7 @@
   font-size: 1.1rem;
 }
 
-/* ANIMACIONES */
-@keyframes headerGlow {
-  0% { 
-    opacity: 0.6; 
-  }
-  100% { 
-    opacity: 1; 
-  }
-}
 
-@keyframes titlePulse {
-  0% {
-    text-shadow: 
-      2px 2px 0 #ff6600,
-      4px 4px 0 #ff3300,
-      6px 6px 15px rgba(0, 0, 0, 0.8);
-  }
-  100% {
-    text-shadow: 
-      2px 2px 0 #ff6600,
-      4px 4px 0 #ff3300,
-      6px 6px 20px rgba(255, 102, 0, 0.4);
-  }
-}
-
-@keyframes symbolFloat {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-    opacity: 1;
-  }
-  50% {
-    transform: translateY(-5px) rotate(5deg);
-    opacity: 0.8;
-  }
-}
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
