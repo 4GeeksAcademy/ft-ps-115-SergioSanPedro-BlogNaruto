@@ -32,28 +32,28 @@ export const SideBar = () => {
           <ul className={styles.menuList}>
             <li className={styles.menuItem}>
               <Link to="/characters-list" className={styles.menuLink}>
-                <span className={styles.menuEmoji}>📜</span>
+                <span className='me-2'>📜</span>
                 Lista personajes
               </Link>
             </li>
 
             <li className={styles.menuItem}>
               <Link to="/akatsuki-list" className={styles.menuLink}>
-                <span className={styles.menuEmoji}>⚡</span>
+                <span className='me-2'>⚡</span>
                 Personajes Akatsuki
               </Link>
             </li>
 
             <li className={styles.menuItem}>
               <Link to="/tailed-beasts" className={styles.menuLink}>
-                <span className={styles.menuEmoji}>🦊</span>
+                <span className='me-2'>🦊</span>
                 Lista de Bestias
               </Link>
             </li>
 
             <li className={styles.menuItem}>
               <Link to="/" className={styles.menuLink}>
-                <span className={styles.menuEmoji}>🏠</span>
+                <span className='me-2'>🏠</span>
                 Home
               </Link>
             </li>
