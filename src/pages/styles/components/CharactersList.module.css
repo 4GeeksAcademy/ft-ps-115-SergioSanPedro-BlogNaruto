@@ -6,15 +6,17 @@
   border: 2px solid #ff6600;
   border-radius: 15px;
   overflow: hidden;
-  width: 80vh;
-  height: 40vh;
+  max-width: 56rem; 
+  width: 100%;
+  min-height: 22rem; 
+  height: auto; 
   box-shadow: 
     0 10px 30px rgba(255, 102, 0, 0.3),
     0 0 50px rgba(255, 102, 0, 0.1),
     inset 0 0 20px rgba(255, 255, 255, 0.05);
   animation: cardGlow 4s ease-in-out infinite alternate;
   transition: all 0.3s ease;
-  margin: 20px;
+  margin: 20px auto; 
 }
 
 .narutoCard:hover {
@@ -27,8 +29,9 @@
 
 /* IMAGEN A LA IZQUIERDA */
 .cardImage {
-  flex: 0 0 200px;
-  height: 250px;
+  flex: 0 0 300px; /* Más grande en desktop */
+  height: 100%; /* Altura completa del contenedor */
+  min-height: 350px;
   position: relative;
   overflow: hidden;
 }
@@ -66,48 +69,53 @@
 /* CONTENIDO A LA DERECHA */
 .cardContent {
   flex: 1;
-  padding: 25px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
+  min-height: 350px;
 }
 
 /* TÍTULO DEL PERSONAJE */
 .characterName {
-  font-size: 1.8rem;
+  font-size: clamp(1.5rem, 3vw, 2.2rem); /* Responsive font size */
   font-weight: 900;
   color: #ffffff;
   text-transform: uppercase;
-  letter-spacing: 8px;
-  margin-bottom: 8px;
+  letter-spacing: clamp(2px, 1vw, 8px); /* Responsive letter spacing */
+  margin-bottom: 15px;
   text-shadow: 
     2px 2px 0 #ff6600,
     4px 4px 0 #ff3300,
     6px 6px 15px rgba(0, 0, 0, 0.8);
   animation: nameGlow 3s ease-in-out infinite alternate;
+  line-height: 1.2;
+  word-wrap: break-word;
 }
 
 /* SUBTÍTULO */
 .characterRank {
-  letter-spacing: 3px;
-  font-size: 1rem;
+  letter-spacing: clamp(1px, 0.5vw, 3px);
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
   color: #ff9933;
   font-weight: 600;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   text-shadow: 0 0 8px rgba(255, 153, 51, 0.6);
 }
 
 .characterStats {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  flex-grow: 1;
 }
 
 .statItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
-  font-size: 0.9rem;
+  margin-bottom: 12px;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  padding: 5px 0;
 }
 
 .statLabel {
@@ -119,7 +127,7 @@
   color: #ff6600;
   font-weight: bold;
   text-shadow: 0 0 5px rgba(255, 102, 0, 0.6);
-  letter-spacing: 3px;
+  letter-spacing: clamp(1px, 0.5vw, 3px);
 }
 
 /* BOTÓN DE ACCIÓN */
@@ -127,9 +135,9 @@
   background: linear-gradient(45deg, #ff6600, #ff3300);
   color: #ffffff;
   border: none;
-  padding: 12px 25px;
+  padding: 15px 30px;
   border-radius: 25px;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -139,6 +147,9 @@
     0 5px 15px rgba(255, 102, 0, 0.3),
     inset 0 0 10px rgba(255, 255, 255, 0.1);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  align-self: flex-start;
+  width: 100%;
+  max-width: 250px;
 }
 
 .actionButton:hover {
@@ -153,8 +164,7 @@
   transform: translateY(0px);
 }
 
-
-
+/* ANIMACIONES */
 @keyframes cardGlow {
   0% {
     box-shadow: 
@@ -185,37 +195,114 @@
   }
 }
 
-@keyframes decorativeFloat {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-    opacity: 0.3;
+/* RESPONSIVE MEJORADO */
+@media (max-width: 1024px) {
+  .narutoCard {
+    max-width: 700px;
+    margin: 15px auto;
   }
-  50% {
-    transform: translateY(-10px) rotate(180deg);
-    opacity: 0.6;
+  
+  .cardImage {
+    flex: 0 0 250px;
+  }
+  
+  .cardContent {
+    padding: 25px;
   }
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
   .narutoCard {
     flex-direction: column;
-    max-width: 400px;
-    margin: 10px;
+    max-width: 90%;
+    width: 90%;
+    margin: 15px auto;
+    min-height: auto;
+    height: auto;
   }
   
   .cardImage {
     flex: none;
-    height: 200px;
+    height: 300px;
     width: 100%;
+    min-height: 300px;
   }
   
   .cardContent {
-    padding: 20px;
+    padding: 25px 20px;
+    min-height: auto;
+    text-align: center;
   }
   
   .characterName {
-    font-size: 1.5rem;
     text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .actionButton {
+    align-self: center;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .narutoCard {
+    width: 95%;
+    margin: 10px auto;
+    border-radius: 10px;
+  }
+  
+  .cardImage {
+    height: 250px;
+    min-height: 250px;
+  }
+  
+  .cardContent {
+    padding: 20px 15px;
+  }
+  
+  .characterName {
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  
+  .characterRank {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+  }
+  
+  .statItem {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+  
+  .actionButton {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    max-width: 180px;
+  }
+}
+
+/* EXTRA SMALL SCREENS */
+@media (max-width: 375px) {
+  .narutoCard {
+    width: 98%;
+    margin: 8px auto;
+  }
+  
+  .cardImage {
+    height: 220px;
+    min-height: 220px;
+  }
+  
+  .cardContent {
+    padding: 15px 12px;
+  }
+  
+  .characterName {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
   }
 }
