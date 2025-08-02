@@ -33,7 +33,7 @@ export const CharacterDetails = () => {
 
   return (
     <>
-      <section className="card-list">
+      <section className="card-list details">
         <div className={styles.narutoCard}>
           <div className={styles.cardImage}>
             <img

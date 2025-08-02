@@ -17,7 +17,7 @@ export const Navbar = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="nav justify-content-evenly transparentNarutoNavbar fixed-top align-items-center">
@@ -43,7 +43,6 @@ export const Navbar = () => {
                   >
                     Lista Favoritos
                     <span className="transparentFavCounter">
-                      {" "}
                       {store.favorites.length}
                     </span>
                   </button>
@@ -52,11 +51,11 @@ export const Navbar = () => {
                       store.favorites.map((fav) => (
                         <li
                           key={fav.id}
-                          className="d-flex justify-content-between fw-bold py-1"
+                          className="d-flex justify-content-between"
                         >
                           <Link
                             to={`/characters-details/${fav.id}`}
-                            className="text-decoration-none text-white ms-1"
+                            className="fw-bold my-1"
                           >
                             {fav.name}
                           </Link>
@@ -67,7 +66,7 @@ export const Navbar = () => {
                                 payload: fav.id,
                               })
                             }
-                            className="btn p-1"
+                            className="btnX p-1 ms-4"
                           >
                             ✕
                           </button>
