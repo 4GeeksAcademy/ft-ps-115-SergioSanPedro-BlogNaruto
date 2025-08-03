@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getCharactersById } from "../ServicesApi/narutoApi";
 import useGlobalReducer from "../hooks/useGlobalReducer";
-import styles from "../pages/styles/components/CharactersList.module.css";
+import styles from "../pages/styles/components/CharactersDetails.module.css";
 
 export const CharacterDetails = () => {
   const { store, dispatch } = useGlobalReducer();
@@ -52,7 +52,8 @@ export const CharacterDetails = () => {
               <p className={styles.characterRank}>
                 Clan: {" "}
                 {store.detailCharacter.personal?.clan ||
-                  store.detailCharacter.personal?.affiliation[1] ||
+                  store.detailCharacter.personal?.affiliation ||
+                  store.detailCharacter.personal?.affiliation[0] ||
                   "S/N"}
               </p>
             </div>

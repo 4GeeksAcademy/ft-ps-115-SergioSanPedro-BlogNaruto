@@ -17,10 +17,10 @@ export const Navbar = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            
+            <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="nav justify-content-evenly transparentNarutoNavbar fixed-top align-items-center">
+            <ul className="nav justify-content-evenly narutoNavbar fixed-top align-items-center">
               <li className="nav-item">
                 <button
                   className="nav-link text-white rounded"
@@ -42,7 +42,7 @@ export const Navbar = () => {
                     style={{ letterSpacing: "3px" }}
                   >
                     Lista Favoritos
-                    <span className="transparentFavCounter">
+                    <span className="favorites">
                       {store.favorites.length}
                     </span>
                   </button>

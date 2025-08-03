@@ -10,56 +10,71 @@ export const SideBar = () => {
         id="offcanvasExample"
         aria-labelledby="offcanvasExampleLabel"
       >
-        {/* HEADER */}
+        
         <div className={`offcanvas-header ${styles.sidebarHeader}`}>
-          <div
-            className='offcanvas-title'
-            id="offcanvasExampleLabel"
-          >
-            <img className="w-100 ms-1" src="src/assets/img/logoNaruto.png" alt="naruto" />
-            
+          <div className="offcanvas-title" id="offcanvasExampleLabel">
+            <img
+              className="w-100 ms-1"
+              src="src/assets/img/logoNaruto.png"
+              alt="naruto"
+            />
           </div>
           <button
             type="button"
             className={`btn-close ${styles.closeButton}`}
             data-bs-dismiss="offcanvas"
             aria-label="Close"
-          >❌</button>
+          >
+            ❌
+          </button>
         </div>
 
-        
         <div className={`offcanvas-body ${styles.sidebarBody}`}>
           <ul className={styles.menuList}>
             <li className={styles.menuItem}>
-              <Link to="/characters-list" className={styles.menuLink}>
-                <span className='me-2'>📜</span>
+              <Link
+                to="/characters-list"
+                className={styles.menuLink}
+                onClick={() => setTimeout(() => window.location.reload(), 100)}
+              >
+                <span className="me-2">📜</span>
                 Lista personajes
               </Link>
             </li>
 
             <li className={styles.menuItem}>
-              <Link to="/akatsuki-list" className={styles.menuLink}>
-                <span className='me-2'>⚡</span>
+              <Link
+                to="/akatsuki-list"
+                className={styles.menuLink}
+                onClick={() => setTimeout(() => window.location.reload(), 100)}
+              >
+                <span className="me-2">⚡</span>
                 Personajes Akatsuki
               </Link>
             </li>
 
             <li className={styles.menuItem}>
-              <Link to="/tailed-beasts" className={styles.menuLink}>
-                <span className='me-2'>🦊</span>
+              <Link
+                to="/tailed-beasts"
+                className={styles.menuLink}
+                onClick={() => setTimeout(() => window.location.reload(), 100)}
+              >
+                <span className="me-2">🦊</span>
                 Lista de Bestias
               </Link>
             </li>
 
-            <li className={styles.menuItem}>
+            <li
+              className={styles.menuItem}
+              onClick={() => setTimeout(() => window.location.reload(), 100)}
+            >
               <Link to="/" className={styles.menuLink}>
-                <span className='me-2'>🏠</span>
-                Home
+                <span className="me-2">🏠</span>
+                Inicio
               </Link>
             </li>
           </ul>
-          <img
-          className="ms-5" src="src/assets/img/pngwing.com.png" alt="" />
+          <img className="ms-5" src="src/assets/img/pngwing.com.png" alt="" />
         </div>
       </div>
     </>

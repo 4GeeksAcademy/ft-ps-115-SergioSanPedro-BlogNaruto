@@ -14,7 +14,6 @@
     0 10px 30px rgba(255, 102, 0, 0.3),
     0 0 50px rgba(255, 102, 0, 0.1),
     inset 0 0 20px rgba(255, 255, 255, 0.05);
-  animation: cardGlow 4s ease-in-out infinite alternate;
   transition: all 0.3s ease;
   margin: 20px auto; 
 }
@@ -47,26 +46,8 @@
   transform: scale(1.05);
 }
 
-.cardImage::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, 
-    rgba(255, 102, 0, 0.1), 
-    transparent 50%, 
-    rgba(255, 51, 0, 0.1));
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
 
-.narutoCard:hover .cardImage::after {
-  opacity: 1;
-}
-
-/* CONTENIDO A LA DERECHA */
+/* CONTENIDO */
 .cardContent {
   flex: 1;
   padding: 30px;
@@ -77,21 +58,17 @@
   min-height: 350px;
 }
 
-/* TÍTULO DEL PERSONAJE */
+/* TÍTULO */
 .characterName {
   font-size: clamp(1.5rem, 3vw, 2.2rem); /* Responsive font size */
   font-weight: 900;
   color: #ffffff;
-  text-transform: uppercase;
   letter-spacing: clamp(2px, 1vw, 8px); /* Responsive letter spacing */
   margin-bottom: 15px;
   text-shadow: 
     2px 2px 0 #ff6600,
     4px 4px 0 #ff3300,
     6px 6px 15px rgba(0, 0, 0, 0.8);
-  animation: nameGlow 3s ease-in-out infinite alternate;
-  line-height: 1.2;
-  word-wrap: break-word;
 }
 
 /* SUBTÍTULO */
@@ -130,7 +107,7 @@
   letter-spacing: clamp(1px, 0.5vw, 3px);
 }
 
-/* BOTÓN DE ACCIÓN */
+/* BOTÓN */
 .actionButton {
   background: linear-gradient(45deg, #ff6600, #ff3300);
   color: #ffffff;
@@ -139,7 +116,6 @@
   border-radius: 25px;
   font-size: clamp(0.9rem, 2vw, 1.1rem);
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -147,7 +123,6 @@
     0 5px 15px rgba(255, 102, 0, 0.3),
     inset 0 0 10px rgba(255, 255, 255, 0.1);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-  align-self: flex-start;
   width: 100%;
   max-width: 250px;
 }
@@ -164,38 +139,8 @@
   transform: translateY(0px);
 }
 
-/* ANIMACIONES */
-@keyframes cardGlow {
-  0% {
-    box-shadow: 
-      0 10px 30px rgba(255, 102, 0, 0.3),
-      0 0 50px rgba(255, 102, 0, 0.1),
-      inset 0 0 20px rgba(255, 255, 255, 0.05);
-  }
-  100% {
-    box-shadow: 
-      0 10px 35px rgba(255, 102, 0, 0.4),
-      0 0 60px rgba(255, 102, 0, 0.15),
-      inset 0 0 25px rgba(255, 255, 255, 0.08);
-  }
-}
 
-@keyframes nameGlow {
-  0% {
-    text-shadow: 
-      2px 2px 0 #ff6600,
-      4px 4px 0 #ff3300,
-      6px 6px 15px rgba(0, 0, 0, 0.8);
-  }
-  100% {
-    text-shadow: 
-      2px 2px 0 #ff6600,
-      4px 4px 0 #ff3300,
-      6px 6px 20px rgba(255, 102, 0, 0.4);
-  }
-}
-
-/* RESPONSIVE MEJORADO */
+/* RESPONSIVE */
 @media (max-width: 1024px) {
   .narutoCard {
     max-width: 700px;
@@ -285,7 +230,6 @@
   }
 }
 
-/* EXTRA SMALL SCREENS */
 @media (max-width: 375px) {
   .narutoCard {
     width: 98%;

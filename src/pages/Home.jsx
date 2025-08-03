@@ -5,11 +5,6 @@ export const Home = () => {
   return (
     <div className={styles.homeContainer}>
       <div className={styles.container}>
-        <div className={styles.spark}></div>
-        <div className={styles.spark}></div>
-        <div className={styles.spark}></div>
-        <div className={styles.spark}></div>
-
         <img 
         src="src/assets/img/narutoTeam.png" alt="naruto"
         className="p-3"
