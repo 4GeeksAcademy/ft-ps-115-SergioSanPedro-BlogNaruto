@@ -103,21 +103,21 @@ html::-webkit-scrollbar {
 
 /* DROPDOWN MENU */
 .dropdown-menu {
-  background: rgb(242, 151, 15) !important;
-  background-color: rgb(242, 139, 13) !important;
-  border: 1px solid rgba(255, 102, 0, 0.7) !important;
-  border-radius: 15px !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
-  padding: 15px 0 !important;
-  margin-top: 10px !important;
+  background: rgb(242, 151, 15);
+  background-color: rgb(242, 139, 13);
+  border: 1px solid rgba(255, 102, 0, 0.7);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  padding: 15px 0;
+  margin-top: 10px;
 }
 
 .dropdown-menu li {
   font-size: 1.2rem;
-  padding: 8px 20px !important;
-  margin: 3px 10px !important;
-  border-radius: 10px !important;
-  transition: all 0.3s ease !important;
+  padding: 5px;
+  margin: 3px 10px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
 }
 
 .dropdown-menu li:hover {
